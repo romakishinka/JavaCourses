@@ -1,6 +1,9 @@
 package ru.java.courses;
 
 class Lesson2 {
+    public static void main(String[] args) {
+
+    }
 
     /**
      * Нужно реализовать формулу y = √(13x + 13/x)
@@ -12,6 +15,7 @@ class Lesson2 {
      * хвост отбрасываем без откругления
      */
     static int formula(int x) {
+
         return 0;
     }
 
