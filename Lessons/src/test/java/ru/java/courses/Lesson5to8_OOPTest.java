@@ -1,11 +1,5 @@
 package ru.java.courses;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.lang.reflect.Method;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import ru.java.courses.sport.Athlete;
@@ -13,6 +7,11 @@ import ru.java.courses.sport.Coach;
 import ru.java.courses.sport.team.football.FootballPlayer;
 import ru.java.courses.sport.team.football.FootballTeam;
 import ru.java.courses.sport.team.football.PlayerRole;
+
+import java.lang.reflect.Method;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Lesson5to8_OOPTest {
 
