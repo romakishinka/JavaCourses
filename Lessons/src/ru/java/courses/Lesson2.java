@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 class Lesson2 {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); //
         String fullName2 = reader.readLine();
         fullName2 = fullName2.toUpperCase();
         System.out.print(fullName2.charAt(0));
