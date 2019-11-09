@@ -1,4 +1,4 @@
-package ru.java.courses;
+package main.java.ru.java.courses;
 
 public class Lesson3_Operators {
 
@@ -9,6 +9,7 @@ public class Lesson3_Operators {
      * 2.1 если больше нуля, к строке в конец добавляем это число
      * 2.2 если меньше нуля, добавляем число в начало строки
      * 2.3 если равно нулю, заменяет содержимое строки на "0"
+     *
      * 3. Проверяем длину полученной строки:
      * 3.1 Если длина строки меньше или равна 10, возвращаем эту строку
      * 3.2 Иначе возвращаем первые 10 символов
@@ -17,11 +18,26 @@ public class Lesson3_Operators {
      * - получить длину строки можно методом .length()
      * - получить первые n символов из строки можно методом .substring(0, n)
      */
+
+
     public static String task1(int i, String str) {
         // свой код нужно писать тут
-        // следующую строку можно удалять
-        return null;
+        if (i>0) {
+            str+=i;
+        }
+        else if (i<0) {
+            String str2 = Integer.toString(i);
+            str = str2+str;
+        }
+        else if (i==0) {
+            str="0";
+        }
+
+        return str = str.length() <= 10 ? str : str.substring(0,10);
+
     }
+
+
 
     /**
      * В этом методе необходимо реализовать следующий алгоритм:
@@ -38,8 +54,16 @@ public class Lesson3_Operators {
      */
     public static boolean task2(int i) {
         // свой код нужно писать тут
-        // следующую строку можно удалять
-        return false;
+
+        i--;
+        if (i>100 || i<30)
+            i+=1000;
+        else if (i>0 && i%2==0)
+            i-=1000;
+
+        return i>=0 ? true : false;
+
+
     }
 
 
