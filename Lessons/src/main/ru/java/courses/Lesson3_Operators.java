@@ -1,4 +1,4 @@
-package main.java.ru.java.courses;
+package ru.java.courses;
 
 public class Lesson3_Operators {
 
