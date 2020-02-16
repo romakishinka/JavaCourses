@@ -65,10 +65,15 @@ public class Lesson11to12_SetMap {
      * 4. Возвращаем последнего пользователя
      */
     public static User task1(Collection<User> source) {
-        // свой код нужно писать тут
-        // следующую строку можно удалять
-
-        return null;
+        Comparator<User> comparator = new Comparator<User>(){
+            @Override
+            public int compare(User o1, User o2) {
+                return o1.getName().compareTo(o2.getName())  | (Integer.compare(o1.getAge(), o2.getAge()));
+            }
+        };
+        ArrayList<User> list = new ArrayList(source);
+        Collections.sort(list, comparator);
+        return list.get(list.size()-1);
     }
 
     /**
@@ -79,10 +84,18 @@ public class Lesson11to12_SetMap {
      * 4. Вернуть количество записей в справочнике
      */
     public static int task2(Collection<User> source) {
-        // свой код нужно писать тут
-        // следующую строку можно удалять
+        HashMap<String, User> map = new HashMap<>();
+        ArrayList<User> list = new ArrayList(source);
+        int count = 0;
 
-       return 0;
+        for (User user : list) {
+            map.put(user.getPhone(), user);
+        }
+
+        for(Map.Entry<String, User> pair : map.entrySet()) {
+            count++;
+        }
+        return count;
     }
 
 
@@ -97,10 +110,21 @@ public class Lesson11to12_SetMap {
      * Нумерация полок начинается с единицы!
      */
     public static Map task3(Collection<String> source) {
-        // свой код нужно писать тут
-        // следующую строку можно удалять
+        TreeSet<String> set = new TreeSet<>(source);
+        ArrayList list = new ArrayList(set);
 
-        return null;
+        HashMap<Integer, List<String>> map = new HashMap<>();
+        int part = 0;
+        int interval =list.size()/5;
+
+        map.put(1, new ArrayList<>(list.subList(0, part+=interval)));
+        map.put(2, new ArrayList<>(list.subList(part, part+=interval)));
+        map.put(3, new ArrayList<>((list.subList(part, part+=interval))));
+        map.put(4, new ArrayList<>(list.subList(part, part+=interval)));
+        map.put(5, new ArrayList<>(list.subList(part,list.size())));
+
+
+        return map;
     }
 
 
@@ -110,8 +134,12 @@ public class Lesson11to12_SetMap {
      * 5. Вернуть справочник [название книги -> номер полки]
      */
     public static Map task4(Map<Integer, String> source) {
-        // свой код нужно писать тут
-        // следующую строку можно удалять
-        return null;
+        Map <String, Integer> map = new HashMap<>();
+
+        for (Map.Entry<Integer, String> pair : source.entrySet()) {
+            map.put(pair.getValue(), pair.getKey());
+        }
+        return map;
+
     }
 }

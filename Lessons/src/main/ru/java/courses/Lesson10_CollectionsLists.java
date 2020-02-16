@@ -1,11 +1,10 @@
 package ru.java.courses;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
-public class Lesson10_CollectionsLists {
+public class Lesson10_CollectionsLists{
+
 
     /**
      * В этом методе необходимо реализовать:
@@ -19,9 +18,16 @@ public class Lesson10_CollectionsLists {
      * Удалять элементы из итерируемого списка нельзя - выпадет исключение
      */
     public static List<String> task1(List<Integer> source) {
-        // свой код нужно писать тут
-        // следующую строку можно удалять
-        return null;
+//        return source.stream().distinct().sorted().map(String::valueOf).collect(Collectors.toList());
+
+        Collections.sort(source);
+        List<String> res = new ArrayList<>();
+
+        for (Integer i : source) {
+            res.add(String.valueOf(i));
+        }
+        return res;
+
     }
 
     /**
@@ -34,8 +40,21 @@ public class Lesson10_CollectionsLists {
      * Подсказка: на входе может быть любое количество чисел
      */
     public static List<Integer> task2(Integer... array) {
-        // свой код нужно писать тут
-        // следующую строку можно удалять
-        return null;
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(array));
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) % 2 == 0) {
+                list.set(i, list.get(i) + 1);
+            }
+        }
+
+        ArrayList list2 = new ArrayList();
+        for (int i = 0; i < list.size(); i++) {
+            if (i >= 3 && i <= 7) {
+                list2.add(list.get(i));
+            }
+        }
+        return list2;
     }
+
+
 }
